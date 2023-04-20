@@ -1,7 +1,7 @@
 #!/usr/bin/Rscript
 
 #Finding python - Anaconda Python Fix
-options(python_cmd = "C:/ProgramData/Anaconda3/python")
+#options(python_cmd = "C:/ProgramData/Anaconda3/python")
 
 #Installing necessary packages and respective dependencies
 #User Input Arguments
