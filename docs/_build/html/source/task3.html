@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 3 - Dynamic Network Visualization &mdash; Cork Oak Use Case  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Task 4 - Ensembl Plants Query" href="task4.html" />
+    <link rel="prev" title="Task 2 - Metabolic Pathway Visualization" href="task2.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Cork Oak Use Case
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Tasks</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="task1.html">Task 1 - Plant Data Annotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task2.html">Task 2 - Metabolic Pathway Visualization</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Task 3 - Dynamic Network Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task4.html">Task 4 - Ensembl Plants Query</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tool1_mercator.html">Mercator4 Webtool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tool2_mapman.html">MapMan Desktop App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tool3_dinar.html">DiNAR App</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cork Oak Use Case</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Task 3 - Dynamic Network Visualization</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/source/task3.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="task-3-dynamic-network-visualization">
+<span id="task3-label"></span><h1>Task 3 - Dynamic Network Visualization<a class="headerlink" href="#task-3-dynamic-network-visualization" title="Permalink to this headline"></a></h1>
+<p>DiNaR is a tool used to obtain a dynamic representation of a biological data network over multiple timepoints or different conditions. This task will guide the user on how to import and analyse networks into DiNaR.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/f-mhm-MqgSU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<iframe width="700" height="400" src="./M2_SeasonalGrowth.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="option-1-importing-a-custom-network-into-dinar">
+<h2>Option 1 - Importing a Custom Network into DiNaR<a class="headerlink" href="#option-1-importing-a-custom-network-into-dinar" title="Permalink to this headline"></a></h2>
+<p>To import a custom network into <a class="reference external" href="https://nib-si.shinyapps.io/DiNAR/">DiNaR</a>, a node and edge tables should be supplied following a specified tabular structure, and be firstly processed with the <a class="reference external" href="https://nib-si.shinyapps.io/pre-processing/">DiNaR preprocessing subApp</a>.</p>
+<p>Node Table Example:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>GeneID</p></th>
+<th class="head"><p>shortName</p></th>
+<th class="head"><p>shortDescription</p></th>
+<th class="head"><p>MapManBin</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CFP56_37705</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-odd"><td><p>CFP56_45155</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-even"><td><p>CFP56_55251</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<p>The first column is the only one required to be filled (either with gene or protein IDs). The other columns are required but may be left empty (using “-“). Additional columns can also be present.</p>
+<p>Edge Table Example:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 29%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>GeneID1</p></th>
+<th class="head"><p>GeneID2</p></th>
+<th class="head"><p>reactionType</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CFP56_37705</p></td>
+<td><p>CFP56_45155</p></td>
+<td><p>coexpressed_with</p></td>
+</tr>
+<tr class="row-odd"><td><p>CFP56_37705</p></td>
+<td><p>CFP56_55251</p></td>
+<td><p>coexpressed_with</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="option-2-importing-a-custom-network-from-cytoscape-into-dinar">
+<h2>Option 2 - Importing a Custom Network from Cytoscape into DiNaR<a class="headerlink" href="#option-2-importing-a-custom-network-from-cytoscape-into-dinar" title="Permalink to this headline"></a></h2>
+<p>Cytoscape is a widely used tool for network analysis and visualization. This section will guide the user on how to import a Cytoscape network into DiNaR.</p>
+<ol class="arabic simple">
+<li><p>In Cytoscape, download both Network <strong>Node</strong> and <strong>Edge</strong> tables (in default .csv format).</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/Export_Node_Table.png"><img alt="../_images/Export_Node_Table.png" src="../_images/Export_Node_Table.png" style="width: 594.8000000000001px; height: 401.0px;" /></a>
+</figure>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/Export_Edge_Table.png"><img alt="../_images/Export_Edge_Table.png" src="../_images/Export_Edge_Table.png" style="width: 596.0px; height: 399.6px;" /></a>
+</figure>
+<ol class="arabic" start="2">
+<li><p>Open the command line and run <code class="docutils literal notranslate"><span class="pre">Cytoscape_DiNaR.R</span></code></p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1">#Inside the directory of the downloaded cork oak data (should also contain ``Cytoscape_DiNaR.R`` )</span>
+<span class="n">Rscript</span> <span class="n">.</span><span class="o">/</span><span class="n">Cytoscape_DiNaR_link.R</span> <span class="o">-</span><span class="n">n</span> <span class="n">corkoak_node.csv</span> <span class="o">-</span><span class="n">c</span> <span class="n">corkoak_mercator.results</span> <span class="o">-</span><span class="n">o</span> <span class="n">corkoak_node_ready_to_process</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<section id="rscript-usage">
+<h3><strong>Rscript Usage:</strong><a class="headerlink" href="#rscript-usage" title="Permalink to this headline"></a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[-n]</span> <span class="pre">network</span></code> - Input a Node Table (.csv, comma-separated)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[-c]</span> <span class="pre">custom</span> <span class="pre">annotation</span></code> - Input gene/protein annotations obtained in Mercator / mercator.results (optional)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[-s]</span> <span class="pre">species</span></code> - Specify a species name (e.g. quercus_suber) to retrieve annotations (if present) from the GoMapMan database (optional)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[-e]</span> <span class="pre">ensemblplants</span></code> - Retrieve short names, short descriptions and orthologs from the Ensembl Plants database (optional)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[-o]</span> <span class="pre">output</span></code> - Specify a name for the output network</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure to run this script within the corkoakdata folder, otherwise specify paths to both script and input files.</p>
+</div>
+<p>After running the script, the <code class="docutils literal notranslate"><span class="pre">corkoak_node_ready_to_process.txt</span></code> file should have the following structure:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 23%" />
+<col style="width: 31%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>GeneID</p></th>
+<th class="head"><p>shortName</p></th>
+<th class="head"><p>shortDescription</p></th>
+<th class="head"><p>MapManBIN</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CFP56_37705</p></td>
+<td><p>TPX2</p></td>
+<td><p>protein TPX2</p></td>
+<td><p>1.1_XPTO1</p></td>
+</tr>
+<tr class="row-odd"><td><p>CFP56_45155</p></td>
+<td><p>NAC43</p></td>
+<td><p>NAC domain-containing protein 43</p></td>
+<td><p>1.2_XPTO2</p></td>
+</tr>
+<tr class="row-even"><td><p>CFP56_55251</p></td>
+<td><p>COBRA4</p></td>
+<td><p>COBRA-like protein 4</p></td>
+<td><p>1.3_XPTO3</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="3">
+<li><p>Open the <a class="reference external" href="https://nib-si.shinyapps.io/pre-processing/">DiNaR preprocessing subApp</a> and select the <strong>tables</strong> option tab</p></li>
+<li><p>Keeping the Tab default Separator, click <strong>Choose Nodes File</strong> and select <code class="docutils literal notranslate"><span class="pre">corkoak_node_ready_to_process.txt</span></code></p></li>
+<li><p>Click <strong>Choose Edges File</strong> and select <code class="docutils literal notranslate"><span class="pre">corkoak_edge_ready_to_process.txt</span></code></p></li>
+<li><p>Fill the <strong>Type in desired network name:</strong> with <code class="docutils literal notranslate"><span class="pre">corkoak_processed</span></code></p></li>
+<li><p>In the Nodes Tab, click download (button under the plot visualization) and change the downloaded file name to corkoak_node_processed. It should look like the following:</p></li>
+</ol>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 13%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>GeneID</p></th>
+<th class="head"><p>shortName</p></th>
+<th class="head"><p>shortDescription</p></th>
+<th class="head"><p>MapManBIN</p></th>
+<th class="head"><p>clusterID</p></th>
+<th class="head"><p>x</p></th>
+<th class="head"><p>y</p></th>
+<th class="head"><p>clusterSimplifiedNodeDegree</p></th>
+<th class="head"><p>expressed</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CFP56_37705</p></td>
+<td><p>TPX2</p></td>
+<td><p>protein TPX2</p></td>
+<td><p>1.1_XPTO1</p></td>
+<td><p>1</p></td>
+<td><p>x</p></td>
+<td><p>y</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>CFP56_45155</p></td>
+<td><p>NAC43</p></td>
+<td><p>NAC domain-containing protein 43</p></td>
+<td><p>1.2_XPTO2</p></td>
+<td><p>1</p></td>
+<td><p>x</p></td>
+<td><p>y</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>CFP56_55251</p></td>
+<td><p>COBRA4</p></td>
+<td><p>COBRA-like protein 4</p></td>
+<td><p>1.3_XPTO3</p></td>
+<td><p>1</p></td>
+<td><p>x</p></td>
+<td><p>y</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="8">
+<li><p>In the Edges Tab, click download (button under the plot visualization), and change the downloaded file name to corkoak_edge_processed. It should look like the following:</p></li>
+</ol>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 18%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>GeneID1</p></th>
+<th class="head"><p>GeneID2</p></th>
+<th class="head"><p>reactionType</p></th>
+<th class="head"><p>clusterID_geneID1</p></th>
+<th class="head"><p>clusterID_geneID2</p></th>
+<th class="head"><p>clusterSimplifiedNodeDegree_geneID1</p></th>
+<th class="head"><p>clusterSimplifiedNodeDegree_geneID2</p></th>
+<th class="head"><p>exists</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CFP56_37705</p></td>
+<td><p>CFP56_45155</p></td>
+<td><p>coexpressed_with</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>CFP56_37705</p></td>
+<td><p>CFP56_55251</p></td>
+<td><p>coexpressed_with</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="video-guide-for-dinar-preprocessing-subapp">
+<h3><strong>Video guide for</strong> <a class="reference external" href="https://nib-si.shinyapps.io/pre-processing/">DiNaR preprocessing subApp</a><a class="headerlink" href="#video-guide-for-dinar-preprocessing-subapp" title="Permalink to this headline"></a></h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KWb1mpFiuOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="importing-a-custom-network-into-the-main-dinar-app">
+<h3>Importing a Custom Network into the main DiNaR App<a class="headerlink" href="#importing-a-custom-network-into-the-main-dinar-app" title="Permalink to this headline"></a></h3>
+<ol class="arabic simple">
+<li><p>Go to the <a class="reference external" href="https://nib-si.shinyapps.io/DiNAR/">DiNaR App</a></p></li>
+<li><p>In <strong>select network</strong>, choose <strong>Custom network</strong></p></li>
+<li><p>In <strong>Upload nodes table</strong>, select the <code class="docutils literal notranslate"><span class="pre">corkoak_node_processed</span></code> file</p></li>
+<li><p>In <strong>Upload edges table</strong>, select the <code class="docutils literal notranslate"><span class="pre">corkoak_edge_processed</span></code> file</p></li>
+<li><p>In <strong>Upload Experimental data files</strong>, select the <code class="docutils literal notranslate"><span class="pre">LogFC_April</span></code> file</p></li>
+<li><p>Confirm columns containing gene IDs (geneID), statistical significance (adj.P.Val) and the logFC values (LogFC_April)</p></li>
+<li><p>Click <strong>Proceed!</strong></p></li>
+<li><p>Under the <strong>Upload Experimental data files</strong>, click <strong>Browse…</strong> and select the <code class="docutils literal notranslate"><span class="pre">LogFC_June</span></code> file</p></li>
+<li><p>Under the <strong>Upload Experimental data files</strong>, click <strong>Browse…</strong> and select the <code class="docutils literal notranslate"><span class="pre">LogFC_June</span></code> file</p></li>
+</ol>
+</section>
+<section id="exploring-dinar-network-visualization-options">
+<h3>Exploring DiNaR network visualization options<a class="headerlink" href="#exploring-dinar-network-visualization-options" title="Permalink to this headline"></a></h3>
+<p>TODO (maybe unecessary)</p>
+</section>
+<section id="creating-a-dynamic-network-visualization">
+<h3>Creating a dynamic network visualization<a class="headerlink" href="#creating-a-dynamic-network-visualization" title="Permalink to this headline"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Larger amounts of experimental data allows the user to create longer and richer dynamic network visualizations in Dinar.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Click the Differential expression per cluster Tab, and select the Dynamic-animatoR option</p></li>
+<li><p>Scroll down and select a preferred video speed under the <strong>Select speed</strong> option</p></li>
+<li><p>Click <strong>Create dynamic.html</strong></p></li>
+<li><p>After a couple seconds and after log text appearing on-screen, click <strong>Download dynamic.html</strong></p></li>
+</ol>
+<p>The final result should look like this:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pCWj5XBvPEg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="video-guide-for-dinar-app">
+<h3><strong>Video guide for</strong> <a class="reference external" href="https://nib-si.shinyapps.io/DiNAR/">DiNaR App</a><a class="headerlink" href="#video-guide-for-dinar-app" title="Permalink to this headline"></a></h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KWb1mpFiuOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Congratulations, this task concludes the present use-case.
+Further questions or recomendations can be submitted to: <a class="reference external" href="mailto:hugo&#46;miguelr99&#37;&#52;&#48;gmail&#46;com">hugo<span>&#46;</span>miguelr99<span>&#64;</span>gmail<span>&#46;</span>com</a>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="task2.html" class="btn btn-neutral float-left" title="Task 2 - Metabolic Pathway Visualization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="task4.html" class="btn btn-neutral float-right" title="Task 4 - Ensembl Plants Query" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Hugo Rodrigues.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

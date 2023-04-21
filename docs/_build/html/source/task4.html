@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 4 - Ensembl Plants Query &mdash; Cork Oak Use Case  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mercator4 Webtool" href="tool1_mercator.html" />
+    <link rel="prev" title="Task 3 - Dynamic Network Visualization" href="task3.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Cork Oak Use Case
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Tasks</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="task1.html">Task 1 - Plant Data Annotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task2.html">Task 2 - Metabolic Pathway Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task3.html">Task 3 - Dynamic Network Visualization</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Task 4 - Ensembl Plants Query</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tool1_mercator.html">Mercator4 Webtool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tool2_mapman.html">MapMan Desktop App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tool3_dinar.html">DiNAR App</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cork Oak Use Case</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Task 4 - Ensembl Plants Query</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/source/task4.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="task-4-ensembl-plants-query">
+<span id="task4-label"></span><h1>Task 4 - Ensembl Plants Query<a class="headerlink" href="#task-4-ensembl-plants-query" title="Permalink to this headline"></a></h1>
+<p>This task will guide the user on how to retrieve gene names, descriptions and orthologs from the <a class="reference external" href="https://plants.ensembl.org/index.html">Ensembl Plants database</a> using R within the command line. The provided Ensembl_Query.R script also allows the user to retrieve information with predefined queries. Alternatively, this task can be mannualy performed in the Ensembl Plants website using the <a class="reference external" href="https://plants.ensembl.org/biomart/martview/dd3908a2674f948aee19f80a0e2bef9b">BioMart Query tool</a>.</p>
+<p>The following steps require R (version 4.1+) to be installed. If not already installed, please <a class="reference external" href="https://www.r-project.org/">download and install R here</a>.</p>
+<section id="step-by-step-single-gene-query">
+<h2>Step-by-Step Single Gene Query<a class="headerlink" href="#step-by-step-single-gene-query" title="Permalink to this headline"></a></h2>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1">#Connect to the Ensembl Plants Database</span>
+<span class="n">plant_ensembl</span> <span class="o">=</span> <span class="nf">useEnsemblGenomes</span><span class="p">(</span><span class="n">biomart</span><span class="o">=</span><span class="s">&quot;plants_mart&quot;</span><span class="p">)</span>
+
+<span class="c1">#Check the available list of Plant Datasets available</span>
+<span class="nf">listDatasets</span><span class="p">(</span><span class="n">plant_ensembl</span><span class="p">)</span>
+
+<span class="c1">#Connect to a dataset of choosing (in this example, connect to the cork oak dataset)</span>
+<span class="c1">#To connect to other datasets, use the following syntax: Genus 1º letter + Species name + _eg_gene (e.g. qsuber_eg_gene)</span>
+<span class="n">plant_mart</span> <span class="o">=</span> <span class="nf">useEnsemblGenomes</span><span class="p">(</span><span class="n">biomart</span><span class="o">=</span><span class="s">&quot;plants_mart&quot;</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span> <span class="n">species</span> <span class="p">)</span>
+
+<span class="c1">#Check the available list of Dataset attributes/features</span>
+<span class="nf">listAttributes</span><span class="p">(</span><span class="n">plant_mart</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In cork oak’s case, all gene ID’s must have a “gene-” prefix for a sucessfull query</p>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1">#Obtaining gene descriptions for a single gene</span>
+<span class="n">single_description</span> <span class="o">&lt;-</span> <span class="nf">getBM</span><span class="p">(</span><span class="n">attributes</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;ensembl_gene_id&#39;</span><span class="p">,</span> <span class="s">&#39;ensembl_peptide_id&#39;</span><span class="p">,</span><span class="s">&#39;description&#39;</span><span class="p">),</span><span class="n">filters</span> <span class="o">=</span> <span class="s">&#39;ensembl_gene_id&#39;</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="s">&quot;gene-CFP56_45155&quot;</span><span class="p">,</span> <span class="n">mart</span> <span class="o">=</span> <span class="n">plant_mart</span><span class="p">)</span>
+<span class="n">single_description</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 29%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ensembl_gene_id</p></th>
+<th class="head"><p>ensembl_peptide_id</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CFP56_23532</p></td>
+<td><p>POE85947.1</p></td>
+<td><p><em>NA</em></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ensembl_gene_id</span></code> - Gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ensembl_peptide_id</span></code> - Protein stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code> - Gene description</p></li>
+</ul>
+</section>
+<section id="step-by-step-multiple-genes-query">
+<h2>Step-by-Step Multiple Genes Query<a class="headerlink" href="#step-by-step-multiple-genes-query" title="Permalink to this headline"></a></h2>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set working directory within the corkoak_usecase folder</span>
+<span class="n">cd</span> <span class="n">corkoak_usecase</span>
+
+<span class="c1">#Connect with the Ensembl Plants Database</span>
+<span class="n">plant_ensembl</span> <span class="o">=</span> <span class="nf">useEnsemblGenomes</span><span class="p">(</span><span class="n">biomart</span><span class="o">=</span><span class="s">&quot;plants_mart&quot;</span><span class="p">)</span>
+
+<span class="c1">#Connect to the cork oak dataset</span>
+<span class="n">plant_mart</span> <span class="o">=</span> <span class="nf">useEnsemblGenomes</span><span class="p">(</span><span class="n">biomart</span><span class="o">=</span><span class="s">&quot;plants_mart&quot;</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span> <span class="n">species</span> <span class="p">)</span>
+
+<span class="c1">#Read Node Table (containing cork oak Gene IDs)</span>
+<span class="n">genes</span> <span class="o">&lt;-</span> <span class="nf">readLines</span><span class="p">(</span><span class="s">&quot;Ensembl_Query.txt&quot;</span><span class="p">)</span>
+
+<span class="c1">#Modifying all Gene IDs to have the &quot;gene-&quot; prefix</span>
+<span class="n">new_genes</span> <span class="o">&lt;-</span> <span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;gene-&quot;</span><span class="p">,</span> <span class="n">genes</span><span class="p">)</span>
+
+<span class="c1">#Obtaining multiple gene descriptions at once</span>
+<span class="c1">#In this case, instead of specifying a single gene ID in the *values field*, we provide a gene list (new_genes)</span>
+<span class="n">multiple_descriptions</span> <span class="o">&lt;-</span> <span class="nf">getBM</span><span class="p">(</span><span class="n">attributes</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;ensembl_gene_id&#39;</span><span class="p">,</span> <span class="s">&#39;ensembl_peptide_id&#39;</span><span class="p">,</span> <span class="s">&#39;description&#39;</span><span class="p">),</span><span class="n">filters</span> <span class="o">=</span> <span class="s">&#39;ensembl_gene_id&#39;</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="n">new_genes</span><span class="p">,</span> <span class="n">mart</span> <span class="o">=</span> <span class="n">plant_mart</span><span class="p">)</span>
+<span class="n">multiple_descriptions</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ensembl_gene_id</p></th>
+<th class="head"><p>ensembl_peptide_id</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>gene-CFP56_23532</p></td>
+<td><p>cds-POE85947.1</p></td>
+<td><p><em>NA</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>gene-CFP56_24732</p></td>
+<td><p>cds-POF21607.1</p></td>
+<td><p><em>NA</em></p></td>
+</tr>
+<tr class="row-even"><td><p>gene-CFP56_18234</p></td>
+<td><p>cds-POE85887.1</p></td>
+<td><p><em>NA</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Available descriptions were not found within the Ensembl Plants database due to a lack of available cork oak annotations.</p>
+</div>
+<div class="line-block">
+<div class="line">More columns can be retrieved by specifying more atributes within the <strong>attributes field</strong>.</div>
+<div class="line">Some additional atributes of interest include:</div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ensembl_transcript_id</span></code> - Transcript stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ensembl_exon_id</span></code> - Exon stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chromosome_name</span></code> - Chromosome/scaffold name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">start_position</span></code> - Gene start (bp)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">end_position</span></code> - Gene end (bp)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">strand</span></code> - Strand</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">band</span></code> - Karyotype band</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transcript_start</span></code> - Transcript start (bp)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transcript_end</span></code> - Transcript end (bp)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transcription_start_site</span></code> - Transcription start site (TSS)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transcript_length</span></code> - Transcript length (including UTRs and CDS)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transcript_is_canonical</span></code> - Ensembl Canonical</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transcript_count</span></code> - Transcript count</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">percentage_gene_gc_content</span></code> - Gene % GC content</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gene_biotype</span></code> - Gene type</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transcript_biotype</span></code> - Transcript type</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span></code> - Source (gene)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transcript_source</span></code> - Source (transcript)</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a complete attribute list, run the following:</p>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">all_attributes</span> <span class="o">&lt;-</span> <span class="nf">listAttributes</span><span class="p">(</span><span class="n">plant_mart</span><span class="p">)</span>
+<span class="nf">view</span><span class="p">(</span><span class="n">all_attributes</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="step-by-step-multiple-genes-query-annotations">
+<h2>Step-by-Step Multiple Genes Query - Annotations<a class="headerlink" href="#step-by-step-multiple-genes-query-annotations" title="Permalink to this headline"></a></h2>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1">#Following the same syntax, by changing attributes within the attribute field, the retrieved information will be different</span>
+<span class="c1">#In this case, to obtain gene annotations (GO:Terms) and correspondent descriptions for a list of genes, run:</span>
+<span class="n">gene_annotations</span> <span class="o">&lt;-</span> <span class="nf">getBM</span><span class="p">(</span><span class="n">attributes</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;ensembl_gene_id&#39;</span><span class="p">,</span><span class="s">&#39;go_id&#39;</span><span class="p">,</span><span class="s">&#39;name_1006&#39;</span><span class="p">),</span><span class="n">filters</span> <span class="o">=</span> <span class="s">&#39;ensembl_gene_id&#39;</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="n">new_genes</span><span class="p">,</span> <span class="n">mart</span> <span class="o">=</span> <span class="n">plant_mart</span><span class="p">)</span>
+<span class="n">gene_annotations</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 29%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ensembl_gene_id</p></th>
+<th class="head"><p>go_id</p></th>
+<th class="head"><p>name_1006</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>gene-CFP56_04669</p></td>
+<td><p>GO:0016020</p></td>
+<td><p>membrane</p></td>
+</tr>
+<tr class="row-odd"><td><p>gene-CFP56_04669</p></td>
+<td><p>GO:0030244</p></td>
+<td><p>cellulose biosynthetic process</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-odd"><td><p>gene-CFP56_18234</p></td>
+<td><p>GO:0009834</p></td>
+<td><p>plant-type secondary cell wall biogenesis</p></td>
+</tr>
+<tr class="row-even"><td><p>gene-CFP56_18234</p></td>
+<td><p>GO:0010417</p></td>
+<td><p>glucuronoxylan biosynthetic process</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ensembl_gene_id</span></code> - Gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">go_id</span></code> - GO term accession</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name_1006</span></code> - GO term name</p></li>
+</ul>
+<p>According to the retrieved annotations, we observe that the queried cork oak genes are putatively related with plant growth, apparent by their activity on phenylpropanoid biosynthetic processes in the cell membrane, which occurs during secondary cell wall biogenesis.</p>
+<p>Some available atributes regarding <strong>Annotation</strong>, in addition to the previous, include:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">definition_1006</span></code> - GO term definition</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">go_linkage_type</span></code> - GO term evidence code</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">namespace_1003</span></code> - GO domain</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">goslim_goa_accession</span></code> - GOSlim GOA Accession(s)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">goslim_goa_description</span></code> - GOSlim GOA Description</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">embl</span></code> - European Nucleotide Archive ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uniparc</span></code> - UniParc ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uniprotswissprot</span></code> - UniProtKB/Swiss-Prot ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pfam</span></code> - Pfam ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scanprosite</span></code> - PROSITE patterns ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">superfamily</span></code> - Superfamily ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tigrfam</span></code> - TIGRFAM ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interpro</span></code> - Interpro ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interpro_short_description</span></code> - Interpro Short Description</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interpro_description</span></code> - Interpro Description</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="step-by-step-multiple-genes-query-homologs">
+<h2>Step-by-Step Multiple Genes Query - Homologs<a class="headerlink" href="#step-by-step-multiple-genes-query-homologs" title="Permalink to this headline"></a></h2>
+<div class="line-block">
+<div class="line">Gene homologs can be retrieved for most plant species using the following attribute syntax:</div>
+<div class="line">[Genus 1º letter + Species name + “_eg_homolog_ensembl_gene”] (e.g. athaliana_eg_homolog_ensembl_gene)</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a complete list of all plant species available for homolog query, run the following:</p>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">all_attributes</span> <span class="o">&lt;-</span> <span class="nf">listAttributes</span><span class="p">(</span><span class="n">plant_mart</span><span class="p">)</span>
+<span class="nf">view</span><span class="p">(</span><span class="n">all_attributes</span><span class="p">)</span>
+<span class="c1">#Scroll down to the *Homologs* section. Every line containing _eg_homolog_ensembl_gene is an available species</span>
+</pre></div>
+</div>
+<p>Gathering <em>Arabidopsis thaliana</em> Homologs:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1">#Gathering Arabidopsis thaliana homologs</span>
+<span class="n">gene_athaliana_homologs</span> <span class="o">&lt;-</span> <span class="nf">getBM</span><span class="p">(</span><span class="n">attributes</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;ensembl_gene_id&#39;</span><span class="p">,</span><span class="s">&#39;athaliana_eg_homolog_ensembl_gene&#39;</span><span class="p">,</span><span class="s">&#39;athaliana_eg_homolog_associated_gene_name&#39;</span><span class="p">),</span><span class="n">filters</span> <span class="o">=</span> <span class="s">&#39;ensembl_gene_id&#39;</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="n">new_genes</span><span class="p">,</span> <span class="n">mart</span> <span class="o">=</span> <span class="n">plant_mart</span><span class="p">))</span>
+<span class="n">gene_athaliana_homologs</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ensembl_gene_id</p></th>
+<th class="head"><p>athaliana_eg_homolog_ensembl_gene</p></th>
+<th class="head"><p>athaliana_eg_homolog_associated_gene_name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>gene-CFP56_04669</p></td>
+<td><p>AT5G44030</p></td>
+<td><p>CESA4</p></td>
+</tr>
+<tr class="row-odd"><td><p>gene-CFP56_04887</p></td>
+<td><p>AT2G46495</p></td>
+<td><p>AT2G46495</p></td>
+</tr>
+<tr class="row-even"><td><p>gene-CFP56_18234</p></td>
+<td><p>AT1G27440</p></td>
+<td><p>GUT2</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ensembl_gene_id</span></code> - Gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">athaliana_eg_homolog_ensembl_gene</span></code> - <em>Arabidopsis thaliana</em> gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">athaliana_eg_homolog_associated_gene_name</span></code> - <em>Arabidopsis thaliana</em> gene name</p></li>
+</ul>
+<p>A species list (possibly outdated) which allows homologs retrieval are, in addition to the previous:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">achinensis_eg_homolog_ensembl_gene</span></code> - <em>Actinidia chinensis</em> gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">atauschii_eg_homolog_ensembl_gene</span></code> - <em>Aegilops tauschii</em> gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">atrichopoda_eg_homolog_ensembl_gene</span></code> - <em>Amborella trichopoda</em> gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">acomosus_eg_homolog_ensembl_gene</span></code> - <em>Ananas comosus</em> gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ahalleri_eg_homolog_ensembl_gene</span></code> - <em>Arabidopsis halleri</em> gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alyrata_eg_homolog_ensembl_gene</span></code> - <em>Arabidopsis lyrata</em> gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aalpina_eg_homolog_ensembl_gene</span></code> - <em>Arabis alpina</em> gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aofficinalis_eg_homolog_ensembl_gene</span></code> - <em>Asparagus officinalis</em> gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">asot3098_eg_homolog_ensembl_gene</span></code> - <em>Avena sativa</em> OT3098 gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">assang_eg_homolog_ensembl_gene</span></code> - <em>Avena sativa</em> Sang gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bvulgaris_eg_homolog_ensembl_gene</span></code> - <em>Beta vulgaris</em> gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bdistachyon_eg_homolog_ensembl_gene</span></code> - <em>Brachypodium distachyon</em> gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bjuncea_eg_homolog_ensembl_gene</span></code> - <em>Brassica juncea</em> gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bnapus_eg_homolog_ensembl_gene</span></code> - <em>Brassica napus</em> gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">boleracea_eg_homolog_ensembl_gene</span></code> - <em>Brassica oleracea</em> gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brro18_eg_homolog_ensembl_gene</span></code> - <em>Brassica rapa R-o-18</em> gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ccajan_eg_homolog_ensembl_gene</span></code> - <em>Cajanus cajan</em> (pigeon pea) - GCA_000340665.1 gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">csativa_eg_homolog_ensembl_gene</span></code> - <em>Camelina sativa</em> gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">csfemale_eg_homolog_ensembl_gene</span></code> - <em>Cannabis sativa</em> female gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cannuum_eg_homolog_ensembl_gene</span></code> - <em>Capsicum annuum</em> gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cbraunii_eg_homolog_ensembl_gene</span></code> - <em>Chara braunii</em> gene stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cquinoa_eg_homolog_ensembl_gene</span></code> - <em>Chenopodium quinoa</em> gene stable ID</p></li>
+<li><p>…</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="predefined-queries-with-ensembl-plants-query-r">
+<h2>Predefined Queries with Ensembl_Plants_Query.R<a class="headerlink" href="#predefined-queries-with-ensembl-plants-query-r" title="Permalink to this headline"></a></h2>
+<p>This script allows the user to specify few input arguments in order to obtain a output table with the following format:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 20%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>geneID</p></th>
+<th class="head"><p>ensembl_peptide_id</p></th>
+<th class="head"><p>description</p></th>
+<th class="head"><p>go_id_description</p></th>
+<th class="head"><p>athaliana_eg_homolog_gene</p></th>
+<th class="head"><p>athaliana_eg_homolog_associated_gene_name</p></th>
+<th class="head"><p>athaliana_eg_homolog_perc_id_r1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CFP56_04669</p></td>
+<td><p>POF10443.1</p></td>
+<td><p><em>NA</em></p></td>
+<td><p>GO:0016020_d1 | GO:0016020_d2 | GO:0016020_d3 …</p></td>
+<td><p>AT5G44030</p></td>
+<td><p>CESA4</p></td>
+<td><p>78.6642</p></td>
+</tr>
+<tr class="row-odd"><td><p>CFP56_18234</p></td>
+<td><p>POE85887.1</p></td>
+<td><p><em>NA</em></p></td>
+<td><p>GO:0016757_d1 | GO:0016757_d2 | GO:0016757_d3 …</p></td>
+<td><p>AT1G27440</p></td>
+<td><p>GUT2</p></td>
+<td><p>87.3786</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">geneID</span></code> - input gene ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ensembl_peptide_id</span></code> - Protein stable ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code> - Gene description</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">go_id_description</span></code> - list of GO:Terms and respective descriptions associated with a given gene</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">athaliana_eg_homolog_gene</span></code> - Arabidopsis thaliana homolog ID (filtered for the highest %identity between query and <em>Arabidopsis thaliana</em> gene)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">athaliana_eg_homolog_associated_gene_name</span></code> - <em>Arabidopsis thaliana</em> gene name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">athaliana_eg_homolog_perc_id_r1</span></code> - %id. query gene identical to target <em>Arabidopsis thaliana</em> gene</p></li>
+</ul>
+<p>This script receives the following mandatory arguments:</p>
+<ol class="arabic simple">
+<li><p>Gene ID list (.txt format, one per line)</p></li>
+<li><p>Species name (e.g. qsuber)</p></li>
+</ol>
+<p>And optional arguments:</p>
+<ol class="arabic simple" start="3">
+<li><p>Output name and format (e.g. qsuber_annotated.csv)</p></li>
+</ol>
+<p>Example of use:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1">#Within the command line:</span>
+<span class="n">Rscript</span> <span class="n">Ensembl_Plants_Query.R</span> <span class="o">-</span><span class="n">g</span> <span class="n">genes.txt</span> <span class="o">-</span><span class="n">s</span> <span class="n">qsuber</span> <span class="o">-</span><span class="n">o</span> <span class="n">annotated_genes.csv</span>
+</pre></div>
+</div>
+<p>This concludes Task 4 of the current Use Case.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="task3.html" class="btn btn-neutral float-left" title="Task 3 - Dynamic Network Visualization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tool1_mercator.html" class="btn btn-neutral float-right" title="Mercator4 Webtool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Hugo Rodrigues.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
