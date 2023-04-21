@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mercator4 Webtool &mdash; Cork Oak Use Case  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MapMan Desktop App" href="tool2_mapman.html" />
+    <link rel="prev" title="Task 4 - Ensembl Plants Query" href="task4.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Cork Oak Use Case
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Tasks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="task1.html">Task 1 - Plant Data Annotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task2.html">Task 2 - Metabolic Pathway Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task3.html">Task 3 - Dynamic Network Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task4.html">Task 4 - Ensembl Plants Query</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mercator4 Webtool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tool2_mapman.html">MapMan Desktop App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tool3_dinar.html">DiNAR App</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cork Oak Use Case</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Mercator4 Webtool</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/source/tool1_mercator.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mercator4-webtool">
+<span id="tool1-mercator-label"></span><h1>Mercator4 Webtool<a class="headerlink" href="#mercator4-webtool" title="Permalink to this headline"></a></h1>
+<p>The <a class="reference external" href="https://www.plabipd.de/mercator_main.html">mercator4</a> webtool is a online tool to assign functional annotations to protein sequences of land plants. The <strong>Mercator4 - about</strong> section describes in greater detail the use and purpose of this tool, which can be accessed under the <strong>online tools - protein annotation</strong> section. Additionaly, this section also provides a FASTA validator tool which can be used prior to job submission in Mercator4 to verify if the user input FASTA is compatible with Mercator4. Lastly, after obtaining the job results, these can be used in the enrichment analysis tool to check for enriched MapMan BINs in a annotated gene/protein list of interest.</p>
+<section id="mercator4-result-visualization-tools">
+<h2>Mercator4 Result Visualization Tools<a class="headerlink" href="#mercator4-result-visualization-tools" title="Permalink to this headline"></a></h2>
+<p>The output files (<code class="docutils literal notranslate"><span class="pre">corkoak.results</span></code> and <code class="docutils literal notranslate"><span class="pre">corkoak.faa</span></code>) which are used throughout tasks 2 and 3 of this use case represent Mercator4 main outputs.
+Nevertheless, upon job conclusion, the user can further explore the following <strong>Result Tabs</strong> within Mercator4 for additional information:</p>
+<ul class="simple">
+<li><p><strong>Job submission</strong> - Summary of which MapMan Bins the data was annotated in.</p></li>
+<li><p><strong>Result tree viewer</strong> - Allows comparison between the number of genes/protein which occupy each Bin for the organism submitted by the user and other reference species. It can serve as a basis to understand if the user input species has more or less genes/proteins annotated in a specific process when compared to other organisms. This comparison can be performed between organisms from multiple job submissions.</p></li>
+<li><p><strong>Result Heatmap viewer</strong> - Different visualization layout of simmilar information provided in the <strong>Result tree viewer</strong> tab.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="task4.html" class="btn btn-neutral float-left" title="Task 4 - Ensembl Plants Query" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tool2_mapman.html" class="btn btn-neutral float-right" title="MapMan Desktop App" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Hugo Rodrigues.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

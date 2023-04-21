@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 1 - Plant Data Annotation &mdash; Cork Oak Use Case  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Task 2 - Metabolic Pathway Visualization" href="task2.html" />
+    <link rel="prev" title="Plant Data Visualization Tool Bundle - Cork Oak Use Case" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Cork Oak Use Case
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Tasks</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Task 1 - Plant Data Annotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task2.html">Task 2 - Metabolic Pathway Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task3.html">Task 3 - Dynamic Network Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task4.html">Task 4 - Ensembl Plants Query</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tool1_mercator.html">Mercator4 Webtool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tool2_mapman.html">MapMan Desktop App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tool3_dinar.html">DiNAR App</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cork Oak Use Case</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Task 1 - Plant Data Annotation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/source/task1.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="task-1-plant-data-annotation">
+<span id="task1-label"></span><h1>Task 1 - Plant Data Annotation<a class="headerlink" href="#task-1-plant-data-annotation" title="Permalink to this headline"></a></h1>
+<p>To make sense of biological data, we often annotate it with terms that help group and organize it.
+Annotated data can be further analysed to gather new insights, such as identifying and/or understanding biological processes of interest.</p>
+<p>The <a class="reference external" href="https://plabipd.de/portal/mercator4">Mercator4 Webtool</a> uses the <strong>MapMan ontology</strong>, a curated vocabulary tailored to annotate plant data. It differs from the more generic Gene Ontology as it describes terms with higher depth and specificity to plant species. A extensive comparison between them is acessible <a class="reference external" href="https://www.frontiersin.org/articles/10.3389/fgene.2012.00115/full">here</a>.</p>
+<p>This first task should be performed at the starting point of usage of this tool bundle, as further tasks require <strong>MapMan</strong> annotated data for a more in-depth analysis. If you haven´t already, please download the cork oak data required to follow this use-case in <a class="reference internal" href="../index.html#download-data-label"><span class="std std-ref">Download Cork Oak Data</span></a>.</p>
+<section id="annotating-biological-data-using-the-mapman-ontology">
+<h2>Annotating biological data using the MapMan Ontology<a class="headerlink" href="#annotating-biological-data-using-the-mapman-ontology" title="Permalink to this headline"></a></h2>
+<ol class="arabic simple">
+<li><p>Open the <a class="reference external" href="https://plabipd.de/portal/mercator4">Mercator4 Webtool</a>.</p></li>
+<li><p>Select <strong>Sequence Type</strong> → <strong>Protein</strong> (<em>default</em>).</p></li>
+<li><p>In <strong>Upload FASTA file</strong>, click <strong>Choose File</strong> and select the <code class="docutils literal notranslate"><span class="pre">corkoak_proteins.faa</span></code> file.</p></li>
+</ol>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/mercator_input_green.png"><img alt="../_images/mercator_input_green.png" src="../_images/mercator_input_green.png" style="width: 1290.0px; height: 177.0px;" /></a>
+<figcaption>
+<p><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">corkoak_proteins.faa</span></code> - example of Mercator4 compatible Input (<em>FASTA File</em>)</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>Fill <strong>Job name</strong> with <code class="docutils literal notranslate"><span class="pre">corkoak</span></code>.</p></li>
+<li><p>Click <strong>Submit Job</strong>.</p></li>
+<li><p>Upon job conclusion, click <strong>Mapping file for MapMan</strong> and <strong>Annotated FASTA file</strong> links to download the respective files.</p></li>
+<li><p>Move the downloaded files into the <code class="docutils literal notranslate"><span class="pre">corkoakdata</span></code> folder.</p></li>
+<li><p>Finally, manually extract both .rar files (e.g. with WinRar or WinZip).</p></li>
+</ol>
+<section id="mercator4-outputs">
+<h3>Mercator4 Outputs<a class="headerlink" href="#mercator4-outputs" title="Permalink to this headline"></a></h3>
+<ul>
+<li><div class="line-block">
+<div class="line"><strong>Output 1</strong> is the same Input FASTA file with the addition of the retrieved annotations in the respective gene/protein headers.</div>
+<div class="line">In the example shown, the protein with ID=”CFP56_25010” is annotated as a NDH lumen subcomplex L component (PnsL1), a intervenient protein in photosynthesis.</div>
+</div>
+</li>
+</ul>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/mercator_output_green.png"><img alt="../_images/mercator_output_green.png" src="../_images/mercator_output_green.png" style="width: 1288.0px; height: 175.0px;" /></a>
+<figcaption>
+<p><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">corkoak.fa</span></code> - Example of Mercator4 Output 1 - Annotated <em>FASTA File</em></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Output 2</strong> follows a tabular structure compatible with other tools which use the MapMan Ontology.</p></li>
+</ul>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="../_images/mercator_results_green.png"><img alt="../_images/mercator_results_green.png" src="../_images/mercator_results_green.png" style="width: 1257.0px; height: 201.0px;" /></a>
+<figcaption>
+<p><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">corkoak.results</span></code> - Example of Mercator4 Output 2 - Annotation Results (<em>Text Document</em>)</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+<div class="legend">
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BINCODE</span></code> - MapMan Ontology Term/Bin codes. Holds a Bin number (for a generic BIN) or BIN numbers (for a BIN cascade, starting left with the most generic term and going through to the most specific, separated by “.”).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NAME</span></code> - Name(s) of the Bin(s).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IDENTIFIER</span></code> - If a gene/protein ID is annotated in a BIN, it’s ID is stored here, otherwise this field is left empty. Multiple IDs annotated in the same BIN appear in separate lines.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DESCRIPTION</span></code> - A brief description of the gene/protein ID annotated in this Bin.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TYPE</span></code> - Annotation source?</p></li>
+</ul>
+</div>
+</figcaption>
+</figure>
+<p><strong>Video Guide:</strong></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KWb1mpFiuOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>With our cork oak data now properly annotated, we are ready to move into further tasks in the usecase, such as <a class="reference internal" href="task2.html#task2-label"><span class="std std-ref">Task 2 - Metabolic Pathway Visualization</span></a>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Plant Data Visualization Tool Bundle - Cork Oak Use Case" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="task2.html" class="btn btn-neutral float-right" title="Task 2 - Metabolic Pathway Visualization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Hugo Rodrigues.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

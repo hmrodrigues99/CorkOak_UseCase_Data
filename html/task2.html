@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>Task 2 - Metabolic Pathway Visualization &#8212; Cork Oak Use Case  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Task 3 - Cytoscape into DiNaR Network Visualization" href="task3.html" />
+    <link rel="prev" title="Task 1 - Plant Data Annotation" href="task1.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="task-2-metabolic-pathway-visualization">
+<span id="task2-label"></span><h1>Task 2 - Metabolic Pathway Visualization<a class="headerlink" href="#task-2-metabolic-pathway-visualization" title="Permalink to this headline">¶</a></h1>
+<p>Integrate and visualize a set of biological data (e.g. genes,proteins,enzymes,..) . This task will handle the set of biological data previously annotated in the <a class="reference internal" href="task1.html#task1-label"><span class="std std-ref">Task 1 - Plant Data Annotation</span></a> and integrate/visualize it within metabolic pathways of interest using the <a class="reference external" href="https://plabipd.de/mapman_main.html">MapMan Desktop App</a>.</p>
+<section id="integrating-annotated-cork-oak-data-in-the-lignin-biosynthesis-metabolic-pathway">
+<h2>Integrating annotated cork oak data in the Lignin biosynthesis metabolic pathway<a class="headerlink" href="#integrating-annotated-cork-oak-data-in-the-lignin-biosynthesis-metabolic-pathway" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Perform the download and installation of the MapMan Desktop App using the <strong>download &amp; installation</strong> tab within this ‘guide  &lt;<a class="reference external" href="https://plabipd.de/mapman_main.html">https://plabipd.de/mapman_main.html</a>&gt;`_.</p></li>
+<li><p>Launch MapMan, and in the main menu select <strong>Show Pathway to visualize your data in the context of metabolic pathways</strong>.</p></li>
+<li><p>In the left box, right-click <strong>Experiments</strong> -&gt; <strong>Add Data</strong> -&gt; select the <strong>corkoak_DE_001.txt</strong> file.</p></li>
+<li><p>In the left box, right-click <strong>Mappings</strong> -&gt; <strong>New Mapping</strong> -&gt; <strong>from file</strong>, browse and select the <strong>corkoak_proteins_mercator.results</strong> file (obtained in <a class="reference internal" href="task1.html#task1-label"><span class="std std-ref">Task 1 - Plant Data Annotation</span></a>).</p></li>
+<li><p>In the left box, right-click <strong>Pathways</strong> -&gt; <strong>Add Pathway</strong> -&gt; <strong>download</strong>, select the file named <strong>“/Cell Wall/ X4.1 Lignin R1.0: X4_R1.0”</strong>.</p></li>
+<li><p>In the left-box, right-click <strong>Pathways</strong> -&gt; <strong>Add Pathway</strong> -&gt; <strong>from file</strong> -&gt; select the <strong>“/Cell Wall/ X4.1 Lignin R1.0: X4_R1.0”</strong> file.</p></li>
+<li><p>In the Pathway Workflow - Choose Pathway box, select the <strong>“/Cell Wall/ X4.1 Lignin R1.0: X4_R1.0”</strong> pathway file.</p></li>
+<li><p>In the Pathway Workflow – Choose Mapping box, select the corkoak_proteins_mercator.results mapping file.</p></li>
+<li><p>In the Pathway Workflow – Choose Experimental Data Set, select the <strong>corkoak_DE_001.txt</strong> file.</p></li>
+<li><p>Click <strong>Show Pathway</strong> and download the image using <strong>File</strong> -&gt; <strong>Export as Image</strong>, renaming it as <code class="docutils literal notranslate"><span class="pre">corkoak_ligninmap</span></code>.</p></li>
+</ol>
+<p>We now have annotated plant data in the context of a specific metabolic pathway. For visualization of the annotated data in a network format, go to the following <a class="reference internal" href="task3.html#task3-label"><span class="std std-ref">Task 3 - Cytoscape into DiNaR Network Visualization</span></a>.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Cork Oak Use Case</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Tasks</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="task1.html">Task 1 - Plant Data Annotation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Task 2 - Metabolic Pathway Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task3.html">Task 3 - Cytoscape into DiNaR Network Visualization</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tool1_mercator.html">Mercator4 Webtool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tool2_mapman.html">MapMan Desktop App</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="task1.html" title="previous chapter">Task 1 - Plant Data Annotation</a></li>
+      <li>Next: <a href="task3.html" title="next chapter">Task 3 - Cytoscape into DiNaR Network Visualization</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Hugo Rodrigues.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/task2.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
